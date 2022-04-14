@@ -14,6 +14,8 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
     'Accept': 'application/json'
 }
+
+
 # https://movie.douban.com/j/search_subjects?
 # type=movie&tag=%E6%9C%80%E6%96%B0&page_limit=20&page_start=0
 
@@ -82,4 +84,3 @@ class Douban:
 if __name__ == '__main__':
     s = Douban('青春', 0, 2000)
     s.start()
-
