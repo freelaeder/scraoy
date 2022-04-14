@@ -21,7 +21,7 @@ login_data = {'username': '18512344321', 'password': '11111111', 'remembered': T
 
 # 生成session 类的对象
 ss = requests.session()
-response = ss.post(url, headers=headers, data=json.dumps(login_data))
+response = ss.post(url, headers=headers, verify=False, data=json.dumps(login_data))
 
 print(response.content.decode('utf-8'))
 print(response.cookies)

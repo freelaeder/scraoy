@@ -6,7 +6,7 @@ import json
 import requests
 
 # 模拟post
-url = 'http://www.haloncloud.top/login/'
+url = 'https://www.haloncloud.top/login/'
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
@@ -19,7 +19,7 @@ login_data = {'username': '18512344321', 'password': '11111111', 'remembered': T
 
 # 生成session 类的对象
 ss = requests.session()
-response = requests.post(url, headers=headers, data=json.dumps(login_data))
+response = requests.post(url, headers=headers, verify=False, data=json.dumps(login_data))
 
 print(response.content.decode('utf-8'))
 print(response.cookies)
