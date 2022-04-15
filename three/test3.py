@@ -13,7 +13,12 @@ print(driver.title)
 driver.maximize_window()
 # 关闭选项卡
 # driver.close()
-
-sleep(3)
+# 当前url
+print(driver.current_url)
+# 当前所有cookie
+print(driver.get_cookies())
+# 获取源码
+# print(driver.page_source)
+# sleep(3)
 # 关闭浏览器
-driver.quit()
+# driver.quit()
