@@ -20,9 +20,15 @@ from lxml import etree
 # 下载bili视频
 
 class Bili:
+<<<<<<< HEAD
     def __init__(self, urls):
         #  1准备起始url 和请求头信息
         self.url = urls
+=======
+    def __init__(self):
+        #  1准备起始url 和请求头信息
+        self.url = 'https://www.bilibili.com/video/BV11q4y1i7Eu?spm_id_from=333.1007.partition_recommend.content.click'
+>>>>>>> b0837ee9497685e1b94536add9b29084519612f7
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
             'Accept': 'application/json, text/plain, */*',
@@ -37,25 +43,39 @@ class Bili:
 
     def download(self, video_url, audio_url, title):
         print('开始下载')
+<<<<<<< HEAD
         # video
         video = requests.get(video_url, headers=self.headers).content
         # audio
+=======
+        video = requests.get(video_url, headers=self.headers).content
+>>>>>>> b0837ee9497685e1b94536add9b29084519612f7
         audio = requests.get(audio_url, headers=self.headers).content
         print('开始保存')
         title = title.replace("/", "").replace(" ", "")
         video_name: str = title + '_temp.mp4'
         audio_name: str = title + '_temp.mp3'
         # 保存文件
+<<<<<<< HEAD
         with open(video_name, 'wb') as f:
             f.write(video)
         with open(audio_name, 'wb') as f:
             f.write(audio)
+=======
+        # with open(video_name, 'wb') as f:
+        #     f.write(video)
+        # with open(audio_name, 'wb') as f:
+        #     f.write(audio)
+>>>>>>> b0837ee9497685e1b94536add9b29084519612f7
         print('开始合成')
         self.hecheng(video_name, audio_name, title + '.mp4')
 
     def hecheng(self, video_name, audio_name, new_name):
+<<<<<<< HEAD
         # 合成MP4
 
+=======
+>>>>>>> b0837ee9497685e1b94536add9b29084519612f7
         os.system(f'ffmpeg -i {video_name} -i {audio_name} -c copy {new_name}')
 
     def parse_data(self, data):
@@ -80,6 +100,7 @@ class Bili:
         # 下载
         self.download(video_url, audio_url, title)
 
+<<<<<<< HEAD
     def start(self):
         data = self.get_data()
         data_list = self.parse_data(data)
@@ -88,4 +109,17 @@ class Bili:
 if __name__ == '__main__':
     urls = input('请输入bili视频地址')
     d = Bili(urls)
+=======
+    def save_data(self, data_list):
+        pass
+
+    def start(self):
+        data = self.get_data()
+        data_list = self.parse_data(data)
+        self.save_data(data_list)
+
+
+if __name__ == '__main__':
+    d = Bili()
+>>>>>>> b0837ee9497685e1b94536add9b29084519612f7
     d.start()
