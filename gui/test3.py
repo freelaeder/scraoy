@@ -1,6 +1,8 @@
 # author:  freelaeder
 # ----
-# date:  2022/4/18 8:48
+# date:  2022/4/18 16:34
+
+# 图形化下载
 
 # - 1准备起始url 和请求头信息  定义好请求参数
 # - 2 发送请求获取响应
@@ -15,14 +17,16 @@ from hashlib import md5
 
 import requests
 from lxml import etree
+# 导入GUI
+import PySimpleGUI as sg
 
 
 # 下载bili视频
 
 class Bili:
-    def __init__(self, urls):
+    def __init__(self, url):
         #  1准备起始url 和请求头信息
-        self.url = urls
+        self.url = url
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
             'Accept': 'application/json, text/plain, */*',
@@ -85,7 +89,26 @@ class Bili:
         data_list = self.parse_data(data)
 
 
-if __name__ == '__main__':
-    urls = input('请输入bili视频地址')
-    d = Bili(urls)
-    d.start()
+# 图形化布局
+# 定义布局
+layout = [
+    [sg.Text('视频地址'), sg.InputText('')],
+    [sg.Button('下载'), sg.Button('取消')]
+
+]
+window = sg.Window('bili视频下载', layout)
+while True:
+    event, values = window.read()
+    if event == None:
+        break
+    if event == '下载':
+        print(values[0])
+        url = values[0]
+        s = Bili(url)
+        s.start()
+
+# 关闭窗口
+window.close()
+# if __name__ == '__main__':
+#     d = Bili()
+#     d.start()
