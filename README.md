@@ -4,4 +4,4 @@
 
 one,two,three,four 为爬虫练习 
 gui 为python图形化练习
-s_baidu 为scrapy 项目
+ScrDome 为scrapy 项目

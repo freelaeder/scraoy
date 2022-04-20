@@ -8,3 +8,5 @@ class BaiduSpider(scrapy.Spider):
 
     def parse(self, response):
         print(f'----------response{response}')
+        with open('mbaidu.html', 'w') as f:
+            f.write(response.text)

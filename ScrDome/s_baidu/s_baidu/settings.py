@@ -62,10 +62,10 @@ NEWSPIDER_MODULE = 's_baidu.spiders'
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    's_baidu.pipelines.SBaiduPipeline': 300,
-# }
-
+ITEM_PIPELINES = {
+    's_baidu.pipelines.SBaiduPipeline': 300,
+}
+# 300优先级，数字越小，优先级越高
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 # AUTOTHROTTLE_ENABLED = True
