@@ -6,13 +6,8 @@
 import scrapy
 
 
-class SBaiduItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
-
-
 class ItcaseItem(scrapy.Item):
     # define the fields for your item here like:
     name = scrapy.Field()
-    pass
+    job = scrapy.Field()
+    desc = scrapy.Field()
