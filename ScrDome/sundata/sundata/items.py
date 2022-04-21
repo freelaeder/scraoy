@@ -6,9 +6,7 @@
 import scrapy
 
 
-class JobItem(scrapy.Item):
+class SundataItem(scrapy.Item):
     # define the fields for your item here like:
-    name = scrapy.Field()
-    company_name = scrapy.Field()
-    provides_name = scrapy.Field()
-    require = scrapy.Field()
+    # name = scrapy.Field()
+    pass
