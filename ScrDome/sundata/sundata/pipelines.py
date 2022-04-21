@@ -10,4 +10,5 @@ from itemadapter import ItemAdapter
 
 class SundataPipeline:
     def process_item(self, item, spider):
+        print('item-------', item)
         return item
