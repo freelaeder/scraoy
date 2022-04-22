@@ -34,7 +34,7 @@ time.sleep(1)
 u.send_keys("2590131280")
 p = driver.find_element_by_id("p")
 time.sleep(1)
-p.send_keys('q1w2e3!(()')
+p.send_keys('*******')
 time.sleep(1)
 # - 5 找到登录按钮 点一下
 login_button = driver.find_element_by_id("login_button")
