@@ -14,11 +14,12 @@ class MyitcaseSpider(scrapy.Spider):
     def parse(self, response):
         # print(response.text)
         li_list: SelectorList = response.xpath("//div[@class='tea_txt tea_txt_cur ']/ul/li")
-        print(type(li_list))
+        # print(type(li_list))
+        print(li_list)
         # <class 'scrapy.selector.unified.SelectorList'>
         li: Selector
         for li in li_list:
-            # print(type(li))
+            #     # print(type(li))
             item = ItcaseItem()
             item['name'] = li.xpath('.//h3/text()').extract_first()
             item['job'] = li.xpath('.//h4/text()').extract_first()

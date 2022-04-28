@@ -5,10 +5,20 @@
 
 
 # useful for handling different item types with a single interface
+import json
+
 from itemadapter import ItemAdapter
 
 
 class SundataPipeline:
+    def open_spider(self, spider):
+        self.file = open('sun.json', 'w', encoding='utf-8')
+
+    def close_spider(self, spider):
+        self.file.close()
+
     def process_item(self, item, spider):
-        print('item-------', item)
+        # print("item", json.dumps(dict(item), ensure_ascii=False) + "\n")
+
+        self.file.write(json.dumps(dict(item), ensure_ascii=False) + "\n")
         return item

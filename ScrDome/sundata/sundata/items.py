@@ -11,4 +11,3 @@ class SunItem(scrapy.Item):
     detail_url = scrapy.Field()
     title = scrapy.Field()
     content = scrapy.Field()
-    pass

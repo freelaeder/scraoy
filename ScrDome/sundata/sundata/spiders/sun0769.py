@@ -2,7 +2,10 @@ import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
-from sundata.items import SunItem
+# from sundata.items import SunItem
+# 报错 ，但可以正常运行，不美观
+# 大致原理就是：在一个package中，同级使用 . 在父级使用 ..
+from ..items import SunItem
 
 
 class Sun0769Spider(CrawlSpider):
